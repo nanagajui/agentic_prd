@@ -1,6 +1,9 @@
-# AgentCli Crew - Product Requirements Documentation Generator
+# Agentic PRD - Product Requirements Documentation Generator
 
-Welcome to the AgentCli Crew project, powered by [crewAI](https://crewai.com). This project is designed to help you generate comprehensive product requirements documentation using a team of specialized AI agents. The system leverages the powerful and flexible framework provided by crewAI to create detailed, well-structured product documentation through collaborative AI agents.
+Welcome to the Agentic PRD / (AgentClI) project, powered by [crewAI](https://crewai.com). This project is designed to help you generate comprehensive product requirements documentation using a team of specialized AI agents. The system leverages the powerful and flexible framework provided by crewAI to create detailed, well-structured product documentation through collaborative AI agents.
+
+##This is designed to work specifically with Agentic Coding Systems. It creates a PRD specifically designed to work well with agentic coders. 
+From one line description of your app it will make a document that help agentic coders build in the best possible way.
 
 ## Features
 
@@ -10,7 +13,7 @@ Welcome to the AgentCli Crew project, powered by [crewAI](https://crewai.com). T
   - Designer
   - Subject Matter Expert
   - Quality Assurance Designer
-- Sequential task processing for structured documentation creation
+- Sequential (though with multi-agent review and cyclical process) task processing for structured documentation creation
 - Interactive CLI interface for project input
 - Comprehensive documentation generation including:
   - Project purpose and goals
@@ -19,6 +22,7 @@ Welcome to the AgentCli Crew project, powered by [crewAI](https://crewai.com). T
   - Product backlog
   - Quality assurance guidelines
   - Complete product requirements document
+  - Written for an Agentic Coder to follow.
 
 ## Installation
 
@@ -41,10 +45,10 @@ crewai install
 
 **Add your `OPENAI_API_KEY` into the `.env` file**
 
-- Modify `src/agent_cli/config/agents.yaml` to customize agent roles and behaviors
-- Modify `src/agent_cli/config/tasks.yaml` to adjust documentation generation tasks
-- Modify `src/agent_cli/crew.py` to add custom tools and specific arguments
-- Modify `src/agent_cli/main.py` to customize the CLI interface
+- Review `src/agent_cli/config/agents.yaml` to customize agent roles and behaviors
+- Review `src/agent_cli/config/tasks.yaml` to adjust documentation generation tasks
+- Review `src/agent_cli/crew.py` to add custom tools and specific arguments
+- Review `src/agent_cli/main.py` to customize the CLI interface
 
 ## Usage
 
@@ -66,8 +70,8 @@ The system will prompt you to enter your project topic/description, and then the
 
 The AgentCli Crew is composed of multiple AI agents, each with unique roles and responsibilities:
 
-- **Product Manager**: Oversees the overall documentation process
-- **Product Owner**: Defines product vision and requirements
+- **Product Manager**: Oversees the overall documentation process creates the overall vision and reviews all the work that is done.
+- **Product Owner**: Defines product vision into stories and requirements
 - **Designer**: Creates design specifications and guidelines
 - **Subject Matter Expert**: Provides domain-specific expertise
 - **Quality Assurance Designer**: Ensures documentation quality and completeness
