@@ -2,8 +2,8 @@
 
 Welcome to the Agentic PRD / (AgentClI) project, powered by [crewAI](https://crewai.com). This project is designed to help you generate comprehensive product requirements documentation using a team of specialized AI agents. The system leverages the powerful and flexible framework provided by crewAI to create detailed, well-structured product documentation through collaborative AI agents.
 
-# This is designed to work specifically with Agentic Coding Systems. It creates a PRD specifically designed to work well with agentic coders. 
-From one line description of your app it will make a document that help agentic coders build in the best possible way.
+This is designed to work specifically with Agentic Coding Systems by creating a PRD written with rules that make it suitable for the task. 
+From one line description of your app/idea it will make a document that help agentic coders build in the best possible way.
 
 ## Features
 
