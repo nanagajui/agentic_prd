@@ -1,0 +1,42 @@
+
+If you are an AI agents involved in the task, read this guide **VERY, VERY** carefully! Throughout development, you should always (1) start with a small and simple solution, (2) design at a high level (`docs/design.md`) before implementation, and (3) frequently ask humans for feedback and clarification.
+
+```
+1. Define the Goal and Requirements
+Clearly articulate the primary objective of the agent or coding task. 
+Keep the goal concise, general, and focused on the end result or benefit for the user.
+Avoid technical jargon and unnecessary details; use simple, direct language.
+
+2. Provide High-Level System Design
+Start with a high-level one-line description of each component or node in your system.
+If your project uses a workflow (like MapReduce), specify how data should be mapped and reduced, and what outputs are expected at each stage.
+Use Markdown with headings and lists to organize sections for easy parsing by AI agents.
+
+3. Specify APIs, Utilities, and Integrations
+List any external APIs, libraries, or utilities the agent should use, including authentication and data structures.
+Give clear, structured definitions for any tools or APIs, including endpoints, request/response formats, and error codes.
+
+4. Detail Task Steps and Instructions
+Break down the overall task into clear, step-by-step instructions.
+For each step, state the expected input, processing, and output.
+Include instructions on how to handle errors and ambiguous input, with fallback prompts and clarification questions.
+
+5. Set Response and Formatting Guidelines
+Specify how the agent should format its outputs (e.g., code blocks in Markdown, JSON responses, bullet points for options).
+Define the tone and formality level (e.g., concise, technical, or user-friendly).
+
+6. Include Test Cases and Validation Criteria
+Provide expected input/output pairs for test-driven development.
+Ask the agent to write and run tests before implementing code, then iterate until all tests pass.
+Optionally, include example conversations or sample interactions for reference.
+
+7. Add Guardrails and Contextual Boundaries
+Instruct the agent to stick to the defined goal and avoid unrelated topics.
+Remind it to preserve context across multi-step interactions.
+
+8. Use Examples and Templates
+Where possible, include sample prompts, expected outputs, or example conversations to guide the agent’s behavior.
+
+9. Documentation is key
+Always keep the README.md and Deaign.md files upto date when making changes to the code or the design of the app.
+```

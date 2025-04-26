@@ -1,0 +1,91 @@
+## The purpose task is the first task that will be given to the product manager.
+purpose_task:
+  description: >
+    Research {topic} as a product or service. 
+    Define the target users, the problems it solves, and the business value. 
+    Output must be concise, actionable, and reference at least two real-world pain points.
+  expected_output: >
+    A clear and concise purpose for the {topic} product that defines what problems this product solves.
+    Who will use the product and why it's important to the users.
+    The output should include real world pain points it solves.
+  agent: product_manager
+
+## The product manager will give the purpose task to the product owner.
+features_task:
+  description: >
+    List all features required to fulfill the purpose, grouped by user value. Each feature must be described in one sentence.
+    Ensure the features allow delivery of the {topic} product and that they will deliver on the purpose.
+  expected_output: >
+    A clear and concise list of features that the {topic} product will have.
+    Each feature must be described in one sentence.
+    The features must be grouped by user value.
+    The features must be aligned with the purpose.
+  agent: product_manager
+  context:
+    - purpose_task
+    ## The product manager will give the features task to the subject matter expert.
+
+subject_matter_expert_task:
+  description: >
+    Conduct a thorough review of the features list you have been given and provide feedback on how each of the features helps to address the needs of the users or how they do not.
+    As an expert in the {topic} you can offer insights that may have been overlooked by the product manager.
+  expected_output: >
+    A clear and concise apriasal of each feature no more than one scentance each. 
+    A list of aspects that the product team should keep front of mind in regards to the {topic} product.
+    The output should be written in a way that is optimal for an agentic coder to create the product.
+  agent: subject_matter_expert  
+  context:
+    - features_task 
+## The subject matter expert will give the additional input on the features the designer.
+design_task:
+  description: >
+    Create a solution design for the {topic} product that will be used by the product owner to create the product backlog.
+  expected_output: >
+    A solution design for the {topic} product.
+    Design presented in a way that is optimal for an agentic coder to create the product.
+    The design should consider the feedback from the subject matter expert and put personalization at the heart of the design.
+    The solution design should include a high level overview of the product, the user journey, and the key features.
+  agent: designer 
+  context:
+    - features_task 
+    - subject_matter_expert_task
+
+product_backlog_task:
+  description: >
+    Create a product backlog for the {topic} product, considering the context you have been given, focusing on most imoportant aspects first.
+  expected_output: >
+    A product backlog for the {topic} product that considers both the design and features needed to deliver on the purpose.
+    The product backlog will be used by an agentic coder to create the product, so it will be written in a way that is optimal for an agentic coder to create the product.
+  agent: product_owner
+  context:
+    - design_task
+    - features_task
+
+quality_assurance_designer_task:
+  description: >
+    Create a quality assurance plan for the {topic} product, considering the context you have been given, focusing on most imoportant aspects first.
+  expected_output: >
+    A quality assurance plan for the {topic} product that considers both the design and features needed to deliver on the purpose.
+    The plan will be used by an agentic coder to create the product, so it will be written in a way that is optimal for an agentic coder to create the product.
+  agent: quality_assurance_designer
+  context:
+    - product_backlog_task
+
+product_requirements_document_task:
+  description: >
+    Review the context you have received and expand each topic into a full section for a Product Requirements Document.
+    Make sure the Product Requirements Document is detailed and contains any and all relevant information.
+    The Product Requirements Document will be used by an agentic coder to create the product. Follow the rules provided in the rules.txt file.
+  expected_output: >
+    A fully fledged Product Requirements Document, with a full section of information for each topic.
+    Release details and timelines are not needed. Aspects of personalization through the use of AI should be covered.
+    The document will be used by an agentic coder, you and the agentic coder will follow the rules provided in the rules.txt file.
+    Formatted as markdown without '```'
+  agent: product_manager  
+  context:
+    - purpose_task
+    - product_backlog_task
+    - quality_assurance_designer_task
+    - features_task
+    - design_task
+  output_file: output/product_requirements_document.md
