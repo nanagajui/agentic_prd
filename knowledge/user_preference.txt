@@ -1,4 +1,4 @@
-User name is Jon.
-User is a Product Manager.
+User name is Jon Doe.
+User is a Product Leader.
 User is interested in AI Agents and app development.
 User is based in Australia.
